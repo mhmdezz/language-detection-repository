@@ -17,7 +17,7 @@ The algorism is based on the research paper:
 	maven command:
 		$ mvn spring-boot:run
 
-	-Then Access the application through the link:
+	-Access the application through the local link:
 		http://localhost:3001/languagedetector/index.html
 		
 -Language samples folder:
@@ -37,5 +37,5 @@ The algorism is based on the research paper:
 -The project technologies:
   
     -Java 8
-    -Spring boot
+    -Spring IoC, Spring boot
     -AngularJS
