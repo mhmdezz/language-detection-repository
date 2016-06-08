@@ -14,6 +14,17 @@ import com.ezz.ld.business.LangDetectFacade;
 import com.ezz.ld.domain.LanguageProfile;
 import com.ezz.ld.exceptions.LangDetectorException;
 
+/**
+ *  LangDetectResource class is the Resource class responsible for detecting the language 
+ *  of input string.
+ *  It provides RESTul service (POST) that accepts the input text and returns the detected language profile as JSON object 
+ *  
+ * @author  Mohamed Ezz
+ * @version 1.0
+ * @since   2016-06-07
+ * 
+*/
+
 @RestController
 public class LangDetectResource {
 
@@ -24,6 +35,15 @@ public class LangDetectResource {
 
 	private static final String ERROR_MESSAGE = "Please Contact Your Administrator";
 
+	
+	/**
+	 * Detect Language service
+	 * 
+	 * @param  inputText	input text with unknown language	
+	 * @return  			Response contains LanguageProfile JSON object of detected language
+	 *
+	 */
+	
 	@RequestMapping(value = "/langdetect", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> detectLanguage(@RequestBody String inputText) {
 		logger.debug("Detect Language for Input text: " + inputText);

@@ -1,12 +1,14 @@
-/**
- * LangDetectorException is a custom exception that wrapping any exception happened on the application
- */
 package com.ezz.ld.exceptions;
 
 /**
- * @author Mohamed Ezz
- *
- */
+* LangDetectorException class
+* Custom exception wrapping any exception raised in the application
+*  
+* @author  Mohamed Ezz
+* @version 1.0
+* @since   2016-06-07
+*/
+
 public class LangDetectorException extends Exception{
 
 	/**

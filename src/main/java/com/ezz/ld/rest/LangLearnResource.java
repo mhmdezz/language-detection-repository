@@ -14,6 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ezz.ld.business.LangLearnFacade;
 import com.ezz.ld.domain.LanguageProfile;
 
+/**
+ *  LangLearnResource class is the Resource class responsible for getting the available languages
+ *  Language profiles are dynamically created based on language samples
+ *  It provides RESTul service (GET) that returns a list of available language profiles 
+ *  
+ * @author  Mohamed Ezz
+ * @version 1.0
+ * @since   2016-06-07
+ * 
+*/
+
 @RestController
 public class LangLearnResource {
 
@@ -22,6 +33,14 @@ public class LangLearnResource {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	/**
+	 * 
+	 * Get available languages service
+	 * 
+	 * @param 	
+	 * @return   Response contains a list of available language profiles
+	 *
+	 */
 	@RequestMapping(value = "/languages", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> availableLanguages() {
 		logger.debug("Get available languages");

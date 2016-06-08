@@ -1,18 +1,3 @@
-/**
- *  LangLearnFacade class is the Business Facade responsible for learning languages dynamically 
- *  
- *  - Read all files from the language samples directory
- *  - Generate n-grams from each document
- *  - Update language n-gram frequency maps based on the generated n-grams of each document
- *  - Language profiles are dynamically created based on language samples
- *  - Sort n-gram frequency map of each language based on the counts of each n-gram
- *  - Language samples should be named as: LanguageName.[n] 
- *	- Language learning is automatically started and processed once at the server start up (After the construction of the bean on the spring context)
- *	- At the end of the language learning process a list of all defined language profiles is available to be used in the language identification of any requested text
- *  
- * 
- */
-
 package com.ezz.ld.business;
 
 import java.nio.file.Path;
@@ -35,9 +20,21 @@ import com.ezz.ld.util.ConfigReader;
 import com.ezz.ld.util.FilesReader;
 
 /**
- * @author Mohamed Ezz
- *
- */
+*  LangLearnFacade class is the Business Facade responsible for learning languages dynamically 
+*  
+*  - Read all files from the language samples directory
+*  - Generate n-grams from each document
+*  - Update language n-gram frequency maps based on the generated n-grams of each document
+*  - Language profiles are dynamically created based on language samples
+*  - Sort n-gram frequency map of each language based on the counts of each n-gram
+*  - Language samples should be named as: LanguageName.[n] 
+*	- Language learning is automatically started and processed once at the server start up (on the application context startup)
+*	- At the end of the language learning process a list of all defined language profiles is available to be used in the language identification of any requested text 
+*
+* @author  Mohamed Ezz
+* @version 1.0
+* @since   2016-06-07
+*/
 
 @Component
 public class LangLearnFacade {
@@ -58,6 +55,16 @@ public class LangLearnFacade {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	
+	/**
+	 * 
+	 * Learn languages dynamically based on random samples from different languages
+	 * The method is executed once on the application context startup 
+	 * 
+	 * @param 	
+	 * @return   List of available language profiles
+	 *
+	 */
 	@PostConstruct
 	public List<LanguageProfile> LearnLanguages() throws LangDetectorException {
 		logger.debug("Learn Language based on language samples");
