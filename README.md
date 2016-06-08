@@ -39,3 +39,4 @@ The algorism is based on the research paper:
     -Java 8
     -Spring IoC, Spring boot
     -AngularJS
+    -JUnit, Mockito
