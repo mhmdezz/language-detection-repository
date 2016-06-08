@@ -33,7 +33,7 @@ import com.ezz.ld.domain.LanguageProfile;
 public class LanguageProcessor {
 	
 	@Autowired
-	NGramProcessor nGramProcessor;
+	private NGramProcessor nGramProcessor;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
